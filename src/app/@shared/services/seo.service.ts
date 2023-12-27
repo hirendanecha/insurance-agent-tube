@@ -69,7 +69,7 @@ export class SeoService {
     }
 
     if (!tagValue.image) {
-      tagValue.image = 'https://freedom.buzz/assets/images/banner/freedom-buzz-high-res.jpeg';
+      tagValue.image = 'https://video.insuranceagent.tube/assets/banner/InsuranceAgent-Banner.jpg';
     }
 
     this.meta.updateTag({
