@@ -14,7 +14,7 @@ import { NotificationsModalComponent } from '../notifications-modal/notification
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   userDetails: any;
@@ -62,15 +62,10 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     // this.isCollapsed = true;
     this.cookieService.delete('auth-user', '/', environment.domain);
-    this.commonService.get(this.apiUrl).subscribe({
-      next: (res => {
         localStorage.clear();
         sessionStorage.clear();
         location.href = environment.logoutUrl;
-        // location.href = "https://freedom-api.opash.in/api/v1/customers/logout";
-      })
-    })
-  }
+   }
 
   isUserMediaApproved(): boolean {
     return this.userDetails?.MediaApproved === 1;
@@ -79,20 +74,23 @@ export class HeaderComponent implements OnInit {
   openVideoUploadPopUp(): void {
     const modalRef = this.modalService.open(VideoPostModalComponent, {
       centered: true,
-      size: 'lg'
+      size: 'lg',
     });
     modalRef.componentInstance.title = `Upload Video`;
     modalRef.componentInstance.confirmButtonLabel = 'Upload Video';
     modalRef.componentInstance.cancelButtonLabel = 'Cancel';
-    modalRef.result.then(res => {
-      console.log(res)
-    })
+    modalRef.result.then((res) => {
+      console.log(res);
+    });
   }
 
   openNotificationsModal(): void {
-    this.userMenusOverlayDialog = this.modalService.open(NotificationsModalComponent, {
-      keyboard: true,
-      modalDialogClass: 'notifications-modal',
-    });
+    this.userMenusOverlayDialog = this.modalService.open(
+      NotificationsModalComponent,
+      {
+        keyboard: true,
+        modalDialogClass: 'notifications-modal',
+      }
+    );
   }
 }
