@@ -15,9 +15,15 @@
           </div>
         </ng-container>
       </div> -->
-      <div class="d-flex flex-wrap justify-content-center gap-2 token-img-modal token-hide-mb">
-        <ng-container *ngFor="let ad of advertisementDataList | slice:0:4">
-          <a class="advertise-image-container" [attr.href]="ad.link ? ad.link : null" [attr.target]="ad.link ? '_blank' : null">
+      <div
+        class="d-flex flex-wrap justify-content-center gap-2 token-img-modal token-hide-mb"
+      >
+        <ng-container *ngFor="let ad of advertisementDataList | slice : 0 : 4">
+          <a
+            class="advertise-image-container"
+            [attr.href]="ad.link ? ad.link : null"
+            [attr.target]="ad.link ? '_blank' : null"
+          >
             <img
               loading="lazy"
               [src]="ad.imageUrl"
@@ -29,15 +35,17 @@
       </div>
     </ng-container>
     <ng-template #localAdvertisement>
-    <div class="col-12 col-md-12 col-lg-8 m-auto token-img-modal token-hide-mb">
-      <img
-        loading="lazy"
-        data-src="{{ '/assets/img/localFoodslogo.png' }}"
-        class="w-100"
-        alt=""
-      />
-    </div>
-  </ng-template >
+      <div
+        class="col-12 col-md-12 col-lg-8 m-auto token-img-modal token-hide-mb"
+      >
+        <img
+          loading="lazy"
+          data-src="{{ '/assets/img/localFoodslogo.png' }}"
+          class="w-100"
+          alt=""
+        />
+      </div>
+    </ng-template>
     <div
       class="d-xl-flex column-gap-2 column-gap-xxl-4 col-12 col-md-12 col-lg-8 m-auto px-4 mt-4 justify-content-center mb-view-left-txt c-searchbar"
     >
@@ -107,11 +115,7 @@
       </div>
     </ng-container>
     <div
-<<<<<<< HEAD
-      *ngIf="mediaApproved && channelId"
-=======
       *ngIf="isUserMediaApproved() && channelList.length"
->>>>>>> 3cb3919054a017660562a8586b3e9f5753b6a5f4
       class="d-flex c-bg-color py-2 justify-content-evenly justify-content-md-center column-gap-2 column-gap-xxl-4 col-12 col-md-12 col-lg-8 m-auto mt-4 my-xxl-4 justify-content-center mb-view-left-txt"
     >
       <!-- routerLink="/channels" -->
@@ -123,13 +127,12 @@
         My Channel
       </div> -->
 
-      <div ngbDropdown class="d-flex flex-column flex-sm-row align-items-center gap-2 d-inline-block btn-group float-end right-action">
+      <div
+        ngbDropdown
+        class="d-flex flex-column flex-sm-row align-items-center gap-2 d-inline-block btn-group float-end right-action"
+      >
         <fa-icon [icon]="['fas', 'user']" [fixedWidth]="true" />
         <a
-<<<<<<< HEAD
-          (click)="!channelList.length ? getChannels() : null"
-=======
->>>>>>> 3cb3919054a017660562a8586b3e9f5753b6a5f4
           class="d-block d-md-flex gap-2 align-items-center c-text flex-wrap justify-content-center"
           id="userDropdown"
           role="button"
